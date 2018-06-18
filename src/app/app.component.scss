@@ -1,4 +1,29 @@
-.diceMenu img{
-  width: 55px;
-  height: 47px;
+.diceMenu {
+  background-color: #D0A98F;
+  height: 900px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  // transform: translateX(-100px);
+  transform: translateX(-290px);
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+
+}
+.diceMenu img {
+  width: 100px;
+  height: 100px;
+  padding-right: 1px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-290px);
+  }
+  100%{
+    transform: translateX(-60px);
+  }
 }
