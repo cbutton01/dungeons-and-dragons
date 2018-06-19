@@ -11,6 +11,11 @@ $main-font: 'Over the Rainbow', cursive;
 
 .header {
   font-family: $header-font;
+  h1{
+    font-size: 50px;
+    color: yellow;
+    text-shadow: 5px 10px black;
+  }
 }
 
 .main {
@@ -18,7 +23,7 @@ $main-font: 'Over the Rainbow', cursive;
   font-family: $main-font;
   background-image: url("../../assets/svg/Dragon.svg");
   background-repeat: no-repeat;
-  background-size: 600px;
+  background-size: 1200px;
   background-position: top;
 }
 
@@ -26,4 +31,6 @@ $main-font: 'Over the Rainbow', cursive;
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 25px;
+  color: rgba(255,255,255,0.5);
 }
