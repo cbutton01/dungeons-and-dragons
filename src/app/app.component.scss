@@ -7,27 +7,29 @@
   justify-content: flex-end;
   transform-origin: right;
   transform: translateX(-230px);
+  animation-fill-mode: both;
+
 }
 .diceMenu img {
   width: 100px;
   height: 100px;
   padding-right: 1px;
 }
-.diceMenu{
+
+.animate{
   animation-name: slide;
-  animation-duration: 2s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
 }
+
 
 @keyframes slide {
   0% {
     transform: translateX(-230px);
   }
-
-  50%{
-    transform: translate(0);
-  }
   100%{
-    transform: translateX(-230px);
+    transform: translateX(0);
   }
+
+
 }
