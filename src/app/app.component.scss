@@ -1,33 +1,35 @@
 .diceMenu {
   background-color: #D0A98F;
-  height: 900px;
-  width: 340px;
+  width: 390px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   transform-origin: right;
-  transform: translateX(-230px);
+  transform: translateX(-280px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 .diceMenu img {
   width: 100px;
   height: 100px;
   padding-right: 1px;
 }
-.diceMenu{
+
+.animate{
   animation-name: slide;
-  animation-duration: 2s;
+  animation-duration: .2s;
   animation-fill-mode: forwards;
+
 }
+
+
 
 @keyframes slide {
   0% {
     transform: translateX(-230px);
   }
-
-  50%{
-    transform: translate(0);
-  }
   100%{
-    transform: translateX(-230px);
+    transform: translateX(0);
   }
 }

@@ -1,0 +1,29 @@
+$header-font: 'Germania One', cursive;
+
+$main-font: 'Over the Rainbow', cursive;
+
+.grid {
+  text-align: center;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns:100vw;
+}
+
+.header {
+  font-family: $header-font;
+}
+
+.main {
+  height: 100vh;
+  font-family: $main-font;
+  background-image: url("../../assets/svg/Dragon.svg");
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position: top;
+}
+
+.main p {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
