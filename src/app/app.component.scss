@@ -1,14 +1,14 @@
 .diceMenu {
   background-color: #D0A98F;
-  height: 900px;
-  width: 340px;
+  width: 390px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   transform-origin: right;
-  transform: translateX(-230px);
-  animation-fill-mode: both;
-
+  transform: translateX(-280px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 .diceMenu img {
   width: 100px;
@@ -18,9 +18,11 @@
 
 .animate{
   animation-name: slide;
-  animation-duration: .5s;
+  animation-duration: .2s;
   animation-fill-mode: forwards;
+
 }
+
 
 
 @keyframes slide {
@@ -30,6 +32,4 @@
   100%{
     transform: translateX(0);
   }
-
-
 }
