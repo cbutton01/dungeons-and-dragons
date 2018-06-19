@@ -28,7 +28,7 @@ export class SpellService {
 
   getSpellById(spellId: number) {
     let request = new XMLHttpRequest();
-    let url = "https://dnd-spell-organizer.herokuapp.com/classes/"+classId+"/spells";
+    let url = "https://dnd-spell-organizer.herokuapp.com/spells/"+spellId;
     let spells;
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -46,7 +46,7 @@ export class SpellService {
 
   getSpellsByClass(classId: number) {
     let request = new XMLHttpRequest();
-    let url = "https://dnd-spell-organizer.herokuapp.com/spells";
+    let url = "https://dnd-spell-organizer.herokuapp.com/classes/"+classId+"/spells";
     let spells;
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
