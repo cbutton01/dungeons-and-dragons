@@ -1,17 +1,5 @@
-<div class="navbar">
-  <div class="diceMenu" class="animate">
-    <img [ngClass]="{'animate':isActive}" (click)="isActive = !isActive"  src="../assets/svg/D20-icon.svg" alt="picture of a dice">
-  </div>
-  <div>
-    <div>
-      Class
-    </div>
-    <div>
-      Skills
-    </div>
-    <div>
-      Your mom
-    </div>
+<div class="navBar">
+  <div class="diceMenu" [ngClass]="{'animate':isActive}">
+    <img (click)="isActive = !isActive"  src="../assets/svg/D20-icon.svg" alt="picture of a dice">
   </div>
 </div>
-<app-routing></app-routing>

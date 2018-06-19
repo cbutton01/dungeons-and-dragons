@@ -7,49 +7,29 @@
   justify-content: flex-end;
   transform-origin: right;
   transform: translateX(-230px);
-  transition: all 0.5s ease;
+  animation-fill-mode: both;
+
 }
 .diceMenu img {
   width: 100px;
   height: 100px;
   padding-right: 1px;
 }
+
 .animate{
   animation-name: slide;
-  animation-duration: 0.5s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
 }
 
-// .menuBack{
-//   background-color: #D0A98F;
-//   height: 900px;
-//   width: 340px;
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: flex-end;
-//   transform-origin: right;
-//   transform: translateX(0px);
-//   animation-name: slideBack;
-//   animation-duration: 0.5s;
-//   animation-fill-mode: forwards;
-// }
-
-
-// @keyframes slideBack {
-//   0% {
-//     transform: translateX(0px);
-//   }
-//   100% {
-//     transform: translateX(-230px);
-//   }
-// }
 
 @keyframes slide {
   0% {
     transform: translateX(-230px);
   }
-
   100%{
-    transform: translate(0);
+    transform: translateX(0);
   }
+
+
 }
