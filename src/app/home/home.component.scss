@@ -1,3 +1,22 @@
+$header-font: 'Germania One', cursive;
+
+$main-font: 'Over the Rainbow', cursive;
+
+body{
+  margin: 0;
+}
+
+.dragon {
+  position: absolute;
+  opacity: .75;
+}
+
+.grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
 .header {
   font-family: $header-font;
 }
