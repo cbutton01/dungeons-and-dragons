@@ -63,7 +63,7 @@ export class CharacterService {
     return characters;
   }
 
-  updateCharacterById(propertiesToUpdate: Map<String, Object>, characterId: number){
+  updateCharacterById(propertiesToUpdate: Object, characterId: number){
     let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId + "/update";
     let characters;
