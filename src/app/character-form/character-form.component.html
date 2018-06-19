@@ -1,0 +1,16 @@
+<h2>Create new Character</h2>
+<p>Name</p>
+<input #newName placeholder="Enter character name">
+<p>Race</p>
+<input #newRace placeholder="Enter character race">
+<p>Class</p>
+<select #newClassId>
+  <div *ngFor="let class of classList">
+    <option value="{{class.id}}">{{class.name}}</option>
+  </div>
+</select>
+<p>Casting Level</p>
+<input #newCastingLevel placeholder="Enter character's casting level">
+<p>Spell Count</p>
+<input #newSpellCount placeholder="How many spells can your character prepare"><br>
+<button class="" (click)="addCharacter(newName.value, newRace.value, newClassId.value, newCastingLevel.value, newSpellCount.value)">Add Character</button>
