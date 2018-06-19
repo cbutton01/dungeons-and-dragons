@@ -2,11 +2,6 @@ $header-font: 'Germania One', cursive;
 
 $main-font: 'Over the Rainbow', cursive;
 
-.dragon {
-  position: absolute;
-  opacity: .75;
-}
-
 .grid {
   display: grid;
   grid-auto-rows: 1fr;
@@ -18,5 +13,8 @@ $main-font: 'Over the Rainbow', cursive;
 }
 
 .main {
+  height: 75vw;
   font-family: $main-font;
+  background-image: url("../../assets/svg/Dragon.svg");
+  background-repeat: no-repeat;
 }
