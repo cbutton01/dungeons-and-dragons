@@ -39,6 +39,18 @@ $main-font: 'Over the Rainbow', cursive;
 }
 .links{
   align-self: center;
+  border: 1px solid black;
+  background-color: brown;
+  font-size: 28px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 10px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
 }
 
 // keyframes
