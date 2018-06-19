@@ -1,11 +1,26 @@
+$header-font: 'Germania One', cursive;
+
+$main-font: 'Over the Rainbow', cursive;
+
+.navHeader{
+  display: flex;
+  flex-direction: row;
+  h3{
+    font-size: 50px;
+    transform: translate(-12px, -35px);
+    font-family: $header-font;
+    color:yellow;
+    text-shadow: 3px 3px black;
+  }
+}
 .diceMenu {
   background-color: #D0A98F;
   width: 390px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  transform-origin: right;
+  flex-direction: column;
+  align-items: flex-end;
   transform: translateX(-280px);
+  transform-origin: right;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -14,6 +29,7 @@
   width: 100px;
   height: 100px;
   padding-right: 1px;
+
 }
 
 .animate{
@@ -21,6 +37,9 @@
   animation-duration: .2s;
   animation-fill-mode: forwards;
 
+}
+.links{
+  align-self: center;
 }
 
 
