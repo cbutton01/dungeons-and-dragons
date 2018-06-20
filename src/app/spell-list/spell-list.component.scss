@@ -1,6 +1,15 @@
 .spell-list {
+  display: grid;
+  width: 60vw;
+  margin: 10vh 0 0 33vw;
+  padding: 5px;
   background-image: url("../../assets/svg/body.svg");
   background-repeat: no-repeat;
-  background-size: 1200px;
+  background-size: 75vh;
   background-position: top;
+}
+
+.show-more {
+  display: flex;
+  justify-content: flex-end;
 }
