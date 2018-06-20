@@ -3,6 +3,11 @@ import { Character } from '../models/character.model';
 import { Class } from '../models/class.model'
 import { CharacterService } from '../character.service';
 import { ClassService } from '../class.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
 
 @Component({
   selector: 'app-character-form',
@@ -12,12 +17,11 @@ import { ClassService } from '../class.service';
 })
 export class CharacterFormComponent implements OnInit {
 
-  constructor(private characterService: CharacterService, private classService: ClassService) { }
+  constructor(private characterService: CharacterService, private classService: ClassService, private http:HttpClient) { }
   classList;
+  
   ngOnInit() {
-    this.characterService.getCharacters().subscribe(dataLastEmitted =>{
-      this.classList = dataLastEmitted;
-    })
+    this.classList = this.classService.getClasses();
   }
 
   addCharacter(newName, newRace, newClassId, newCastingLevel, newSpellCount){

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerComponent } from './player/player.component';
@@ -19,7 +20,9 @@ import { SpellListComponent } from './spell-list/spell-list.component';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

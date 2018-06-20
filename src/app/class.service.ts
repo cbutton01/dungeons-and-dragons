@@ -1,46 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Class } from "./models/class.model";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClassService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getClasses(){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/classes";
-    let classes;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          classes = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          classes = "No classes";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return classes;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 
   getClassById(classId: number){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/classes/" + classId;
-    let classes;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          classes = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          classes = "This class does not exist.";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return classes;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 }
