@@ -14,7 +14,8 @@ $main-font: 'Over the Rainbow', cursive;
   h1{
     font-size: 50px;
     color: yellow;
-    text-shadow: 5px 10px black;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #4d243d;
     padding-left: 120px;
   }
 }
