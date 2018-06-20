@@ -82,7 +82,7 @@
             "assets": [
               "assets",
               "favicon.png"
-            ],
+            ]
           }
         },
         "lint": {
