@@ -1,28 +1,33 @@
-<div class="content">
+
+<div class="content" ng-controller="formController">
   <div >
+    <h3>EquippedSpells:</h3>
     <ul>
-      <li class="spell">
-        <h3><input type="checkbox" name="" value="">Spell Name</h3>
-          nth-level
-          <i>spell school</i>
+      <li *ngFor="let number of equippedSpells">{{number}}</li>
+    </ul>
+    <ul>
+      <li *ngFor="let spell of spellList | async" class="spell">
+        <h3><input type="checkbox" name="spells" value="">{{spell.name}}</h3><button *ngIf="!spellsFull" (click)="addSpell(spell.id)">Add</button>
+          level {{spell.level}}
+          <i>{{spell.school}}</i>
          <br>
          <strong>
            Casting Time:
-         </strong> Time
+         </strong> {{spell.castTime}}
          <br>
          <strong>
            Range:
-         </strong> Range
+         </strong> {{spell.range}}
          <br>
          <strong>
            Duration:
-         </strong>
-
+         </strong>{{spell.duration}}
+         <br>
         <ul>
           <li>
-           <strong>Components:</strong>
+           <strong>Components: </strong>
           </li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+          <li>{{spell.description}}</li>
         </ul>
       </li>
     </ul>
