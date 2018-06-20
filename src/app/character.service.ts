@@ -10,7 +10,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CharacterService {
-
+  currentCharacter: Character;
   constructor(private http:HttpClient) { }
 
   getCharacters(){
@@ -69,5 +69,11 @@ export class CharacterService {
   deleteCharacterById(characterId: number){
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId + "/delete";
     this.http.delete(url);
+  }
+  setCurrentCharacter(character){
+    this.currentCharacter= character;
+  }
+  getCurrentCharacter(){
+    return this.currentCharacter;
   }
 }

@@ -19,13 +19,13 @@ export class CharacterFormComponent implements OnInit {
 
   constructor(private characterService: CharacterService, private classService: ClassService, private http:HttpClient) { }
   classList;
-  
+
   ngOnInit() {
     this.classList = this.classService.getClasses();
   }
 
   addCharacter(newName, newRace, newClassId, newCastingLevel, newSpellCount){
-    let newCharacter = new Character(newName, newRace, newClassId, newCastingLevel, newSpellCount, "", 0)
-    this.characterService.addNewCharacter(newCharacter);
+    let newCharacter: Character = new Character(newName, newRace, newClassId, newCastingLevel, newSpellCount, "", 0);
+    this.characterService.setCurrentCharacter(newCharacter);
   }
 }
