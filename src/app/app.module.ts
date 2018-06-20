@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { PlayerComponent } from './player/player.component';
 import { routing } from './app-routing';
 import { CharacterFormComponent } from './character-form/character-form.component';
+import { SpellListComponent } from './spell-list/spell-list.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CharacterFormComponent } from './character-form/character-form.componen
     AppComponent,
     HomeComponent,
     PlayerComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    SpellListComponent
   ],
   imports: [
     BrowserModule,
