@@ -22,7 +22,9 @@ export class CharacterService {
 
   getCharacterById(characterId: number){
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId;
+    console.log(url);
     return this.http.get(url).toPromise().then(result => {
+      console.log(result);
       return result;
     });
   }
@@ -66,8 +68,6 @@ export class CharacterService {
 
   deleteCharacterById(characterId: number){
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId + "/delete";
-    return this.http.delete(url).toPromise().then(result => {
-      return result;
-    });
+    this.http.delete(url);
   }
 }
