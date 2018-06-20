@@ -7,6 +7,7 @@ import { PlayerComponent } from './player/player.component';
 import { routing } from './app-routing';
 import { CharacterFormComponent } from './character-form/character-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
