@@ -20,19 +20,33 @@ export class SpellListComponent implements OnInit {
   spellList;
   equippedSpells: number[] = [];
   spellsFull: boolean = false;
+  spellsLeft: number;
+
   ngOnInit() {
     // this.currentCharacter =
+    //this.spellsLeft = this.currentCharacter.spellCount;
     // this.spellList = this.spellService.getSpellsByClass(this.currentCharacter.classId);
+    this.spellsLeft = 5;
     this.spellList = this.spellService.getSpellsByClass(4);
   }
 
   addSpell(spellId: number){
     if(this.equippedSpells.indexOf(spellId) === -1){
       this.equippedSpells.push(spellId);
+      this.spellsLeft -= 1;
+      // if(this.equippedSpells.length === this.currentCharacter.spellCount){
+      //   this.spellsFull = true;
+      // }
     }
-    // if(this.equippedSpells.length === this.currentCharacter.spellCount){
-    //   this.spellsFull = true;
-    // }
+
+  }
+
+  removeSpell(spellId: number){
+    if(this.equippedSpells.indexOf(spellId) !== -1){
+      this.equippedSpells.splice(this.equippedSpells.indexOf(spellId), 1);
+      this.spellsLeft += 1;
+      this.spellsFull = false;
+    }
   }
 
 }
