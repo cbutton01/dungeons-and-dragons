@@ -1,47 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Character } from "./models/character.model";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getCharacters(){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/characters";
-    let characters;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          characters = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          characters = "No characters";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return characters;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 
   getCharacterById(characterId: number){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId;
-    let characters;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          characters = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          characters = "No characters";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return characters;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 
   addNewCharacter(newCharacter: Character){
@@ -82,20 +65,9 @@ export class CharacterService {
   }
 
   deleteCharacterById(characterId: number){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/characters/" + characterId + "/delete";
-    let characters;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          characters = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          characters = "Character not deleted";
-        }
-    }
-
-    request.open("DELETE", url, true);
-    request.send();
-
-    return characters;
+    return this.http.delete(url).toPromise().then(result => {
+      return result;
+    });
   }
 }
