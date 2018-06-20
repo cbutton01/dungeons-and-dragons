@@ -3,9 +3,9 @@ $main-font: 'Over the Rainbow', cursive;
 
 .grid {
   display: grid;
-  grid-template-columns:45vw;
+  // grid-template-columns: 45vw;
   margin-left: 33vw;
-  margin-bottom: 0;
+  margin-right: 10vw;
   font-size: 15px;
   h1{
     text-align: center;
