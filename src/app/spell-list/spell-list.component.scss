@@ -1,15 +1,50 @@
-.spell-list {
-  display: grid;
-  width: 60vw;
-  margin: 10vh 0 0 33vw;
-  padding: 5px;
+.content {
+  width: 500px;
   background-image: url("../../assets/svg/body.svg");
-  background-repeat: no-repeat;
-  background-size: 75vh;
-  background-position: top;
+  margin: 20vh 0 0 30vw;
 }
 
-.show-more {
-  display: flex;
-  justify-content: flex-end;
+ ul {
+    list-style:none;
+    margin:0;
+    padding:20px;
+}
+ ul:before, ul:after {
+    content:"";
+    display:table;
+}
+ ul:after {
+    clear:both;
+}
+
+ :hover {
+    text-decoration:none;
+}
+ li ul li {
+    width:200px;
+}
+ li ul {
+    border:none;
+}
+ li ul:hover {
+   cursor: pointer;
+    background:rgba(0,0,0,0.2);
+}
+
+ li ul {
+    left:0;
+    top:36px;
+    z-index:1;
+    max-height:0;
+    overflow:hidden;
+    -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin:50% 0;
+    -webkit-transition:350ms;
+    -moz-transition:350ms;
+    -o-transition:350ms;
+    transition:350ms;
+}
+ ul > li:hover ul {
+    max-height:1000px;
+    -webkit-transform:perspective(400) rotate3d(0,0,0,0);
 }
