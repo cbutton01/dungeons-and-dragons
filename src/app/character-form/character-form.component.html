@@ -6,9 +6,7 @@
   <input #newRace placeholder="Enter character race">
   <p>Class</p>
   <select #newClassId>
-    <div *ngFor="let class of classList">
-      <option value="{{class.id}}">{{class.name}}</option>
-    </div>
+      <option *ngFor="let class of classList | async" value="{{class.id}}">{{class.name}}</option>
   </select>
   <p>Casting Level</p>
   <input #newCastingLevel placeholder="Enter character's casting level">

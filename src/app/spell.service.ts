@@ -1,64 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Spell } from './models/spell.model'
+import { Spell } from './models/spell.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpellService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getSpells(){
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/spells";
-    let spells;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          spells = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          spells = "No spells";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return spells;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 
   getSpellById(spellId: number) {
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/spells/"+spellId;
-    let spells;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          spells = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          spells = "This class has no spells.";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return spells;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 
   getSpellsByClass(classId: number) {
-    let request = new XMLHttpRequest();
     let url = "https://dnd-spell-organizer.herokuapp.com/classes/"+classId+"/spells";
-    let spells;
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          spells = JSON.parse(this.response);
-        } else if (this.readyState === 4 && this.status != 200) {
-          spells = "No spells";
-        }
-    }
-
-    request.open("GET", url, true);
-    request.send();
-
-    return spells;
+    return this.http.get(url).toPromise().then(result => {
+      return result;
+    });
   }
 }
