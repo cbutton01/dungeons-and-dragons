@@ -49,4 +49,10 @@ export class SpellListComponent implements OnInit {
     }
   }
 
+  done(){
+    // let spells = this.equippedSpells.toString();
+    // this.currentCharacter.preparedSpells = spells;
+    //this.characterService.updateCharacterById(this.currentCharacter.id);
+  }
+
 }
