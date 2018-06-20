@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     component: CharacterFormComponent
   },
   {
-    path: 'charcater/spells',
+    path: 'spell-list',
     component: SpellListComponent
   }
 ];
