@@ -2,28 +2,51 @@
   <h1>Character</h1>
   <div class="something">
     <div class="info">
-      <span>Name:</span> "placeholder"
+      <span>Name:</span> {{currentCharacter.name}}
     </div>
     <div class="info">
-      <span>Race:</span> "placeholder"
+      <span>Race:</span> {{currentCharacter.race}}
     </div>
     <div class="info">
-      <span>Class:</span> "placeholder"
+      <span>Class:</span> {{characterClass.name}}
+      <p>{{characterClass.description}}</p>
     </div>
     <div class="info">
-      <span>Casting lvl:</span> "placeholder"
+      <span>Casting lvl:</span> {{currentCharacter.castingLevel}}
     </div>
     <div id="borderBottom" class="info">
-      <span>Spell Count:</span> "placeholder"
+      <span>Spell Count:</span> {{currentCharacter.spellCount}}
     </div>
     <div class="info">
-      <!-- THE DIV BELOW NEEDS AN NGFOR LOOP YO YO -->
+      
       <div class="spells">
-        <span>Prepared Spells</span>
-        <p>"placeholder spells"</p>
-        <p>"placeholder spells"</p>
-        <p>"placeholder spells"</p>
-        <p>"placeholder spells"</p>
+        <span>Prepared Spells:</span>
+        <ul>
+          <li *ngFor="let spell of equippedSpells | async" class="spell">
+            <h3>{{spell.name}}</h3>
+              level {{spell.level}}
+              <i>{{spell.school}}</i>
+             <br>
+             <strong>
+               Casting Time:
+             </strong> {{spell.castTime}}
+             <br>
+             <strong>
+               Range:
+             </strong> {{spell.range}}
+             <br>
+             <strong>
+               Duration:
+             </strong>{{spell.duration}}
+             <br>
+            <ul>
+              <li>
+               <strong>Components: </strong>
+              </li>
+              <li>{{spell.description}}</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
