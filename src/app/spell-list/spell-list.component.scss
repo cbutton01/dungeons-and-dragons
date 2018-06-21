@@ -1,4 +1,13 @@
+$header-font: 'Germania One', cursive;
+
+$main-font: 'Over the Rainbow', cursive;
+
+strong, h3 {
+  font-family: $header-font;
+}
+
 .content {
+  text-align: center;
   width: 500px;
   background-image: url("../../assets/svg/body.svg");
   margin: 20vh 0 0 30vw;
@@ -20,9 +29,7 @@
  :hover {
     text-decoration:none;
 }
- li ul li {
-    width:200px;
-}
+
  li ul {
     border:none;
 }
